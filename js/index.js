@@ -1,3 +1,5 @@
+
+//efectos
 $(function () {
 
     $("#btnCambiar").on("clik", function () {
@@ -22,7 +24,7 @@ $(function () {
 
 
 
-
+//calculo credito
 $(function () {
     $("#btnCalcular").on("click", function () {
 
@@ -87,6 +89,8 @@ $(function () {
 });
 
 
+
+//carrusel stop on hover
 $(function () {
     $("#carouselExampleIndicators").on("mouseenter", function () {
     $(this).carousel("pause");
@@ -94,6 +98,9 @@ $(function () {
 });
 
 
+
+
+//crear y borrar tarea
 $(function () {
 
     $("#btnAlerta").on("click", function () {
@@ -108,4 +115,92 @@ $(function () {
     console.log("hola")
     });
 
+});
+
+
+
+
+
+//login
+$(document).ready(function() {
+  $('#loginForm').submit(function(event) {
+    event.preventDefault();
+    var username = $('#username').val();
+    var password = $('#password').val();
+
+    if (username === 'admin' && password === '123456') {
+
+      window.location.href = './menu.html';
+    } else {
+      alert('Usuario o contraseña invalido. Inténtalo de nuevo.');
+    }
+  });
+});
+
+
+//Olvide mi contrasena
+$(document).ready(function() {
+  $('#ForgotForm').submit(function(event) {
+    event.preventDefault();
+    var email = $('#email').val();
+
+    if (email != '') {
+      alert('Contraseña enviada a su mail.');
+      window.location.href = './login.html';
+    } else {
+      alert('Ingrese su mail para reenviar su contraseña . Inténtalo de nuevo.');
+    }
+  });
+});
+
+
+//Crear usuario
+$(document).ready(function() {
+  $('#crearusuario').submit(function(event) {
+    event.preventDefault();
+    var username = $('#username').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+    if (username != '' && email != '' && password != '') {
+      alert('Usuario creado exitosamente.');
+      window.location.href = './login.html';
+    } else {
+      alert('Complete los datos para crear su usuario correctamente. Inténtalo de nuevo.');
+    }
+  });
+});
+
+
+//Sumar y restar dinero
+$(document).ready(function() {
+  var balance = 0;
+
+  function updateBalance() {
+    $('#balance').text(balance.toFixed(0));
+  }
+
+  $('#sumarbtn').click(function() {
+    var amount = parseFloat($('#monto').val());
+    if (!isNaN(amount) && amount > 0) {
+      balance += amount;
+      updateBalance();
+      $('#monto').val('');
+      alert('Deposit realizado!');
+    } else {
+      alert('Monto invalido. Por favor ingrese un número mayor a 0.');
+    }
+  });
+
+  $('#restarbtn').click(function() {
+    var amount = parseFloat($('#monto').val());
+    if (!isNaN(amount) && amount > 0 && amount <= balance) {
+      balance -= amount;
+      updateBalance();
+      $('#monto').val('');
+      alert('Retiro exitoso!');
+    } else {
+      alert('Cantidad no válida. Ingrese un número válido dentro de su saldo.');
+    }
+  });
 });
