@@ -21,8 +21,13 @@
 
 <main>
 
-<body class="p-5">
+<body>
+
   <div class="container">
+
+    <div class="row m-2">
+
+    <div class="col-md-6">
     <h2>Depositar</h2>
     
       <div class="form-group">
@@ -30,25 +35,56 @@
         <input type="number" class="form-control" id="monto" placeholder="Ingresar Monto" min="2">
       </div>
 
+
+
       <div>
-      <button id="sumarbtn" class="btn btn-primary">Deposito</button>
-      <button id="restarbtn" class="btn btn-primary">Retirar</button>
+      <button id="sumarbtn" class="btn btn-success">Deposito</button>
+      <button id="restarbtn" class="btn btn-danger">Retirar</button>
       </div>
 
+      <div id="resultado" class="alert alert-info mt-3" style="display: none"></div>
+    </div>
 
+<br>
 
       <div class="col-md-6">
-        <h2>Balance:</h2>
-        <h4 id="balance">0</h4>
+
+<div class="border rounded p-3 m-2">
+        <h2>Saldo en Cuenta:</h2>
+
+        <div class="input-group input-group-lg mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control" id="balance" value="1000" aria-label="Amount (to the nearest dollar)" disabled>
+          <div class="input-group-append">
+          <span class="input-group-text">Pesos</span>
+          </div>
+        </div>
+</div>
       </div>
+      <div id="resultado2" class="alert alert-info mt-3" style="display: none"></div>
+
+</div>
 
 <div class="d-flex justify-content-center">     
-    <a href="./menu.html" class="btn btn-secondary">Volver al Menú Principal</a>
+    <a href="./menu.html" class="btn btn-secondary">Volver al Menú Principal ⬅️</a>
 </div> 
+
 
 </div>
 
 <br>
+
+
+<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center p-2" >
+  <div class="position-fixed top-0 right-0 p-3" style="z-index: 5; right: 0; top: 0;">
+    <div class="toast" id="toast1" role="alert" aria-live="assertive" aria-atomic="true" data-delay="10000">
+    </div>
+</div>
+</div>
+
+
 </main>
 
 <footer>

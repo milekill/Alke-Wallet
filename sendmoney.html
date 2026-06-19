@@ -21,39 +21,106 @@
 
 <main>
   
-<body class="p-5">
+<body>
 
 <div class="container">
     <h2>Enviar Dinero</h2>
-    <form>
-      <div class="form-group">
-        <label for="searchContact">Buscar en la agenda de transferencias:</label>
-        <input type="text" class="form-control" id="searchContact" placeholder="Buscar Contacto">
-      </div>
-      <button type="submit" class="btn btn-primary">Agregar nuevo contacto</button>
 
+
+</head>
+<body>
+
+
+
+    <form>
+      <div class="container form-group">
+        <label class="" for="agregardato2">Buscar en la agenda de contactos:</label>
+        <div class="row">
+        <input type="text" class="form-control col-md-8" id="buscador" placeholder="Buscar Contacto">
+        <button type="button" class="btn btn-primary col-md-4" id="btnAgregarbuscar" hidden>Buscar contacto</button>
+      </div>
+      </div>
+
+    </form>
+
+
+<div class="container rounded border">
+<div class="row d-flex justify-content-between m-2">
  <h3 class="mt-2">Contactos</h3>
 
+ <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalcontacto">+ Agregar Contacto Nuevo 🙋</button>
+</div>
+
   <ul id="contactList" class="list-group">
+
     <li class="list-group-item">
-      <div class="contact-info">
-        <span class="contact-name">Felipe</span>
-        <span class="contact-details">Rut: 12345678-K, Alias: Felipe, Banco: Banco BCI</span>
+      <div class="contact-info d-flex justify-content-between">
+        <span class="contact-name">Nombre: Felipe</span>
+        <span class="contact-details">Rut: 12345678-K, Banco: Banco BCI, Alias: Felipe</span>
+        <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
+        <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
       </div>
     </li>
 
     <li class="list-group-item">
-      <div class="contact-info">
-        <span class="contact-name">Daniel</span>
-        <span class="contact-details">Rut: 12345678-K, Alias: Daniel, Banco: Banco Estado</span>
+      <div class="contact-info d-flex justify-content-between">
+        <span class="contact-name">Nombre: Daniel</span>
+        <span class="contact-details">Rut: 12345678-K, Banco: Banco Estado, Alias: Daniel</span>
+        <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
+        <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
       </div>
     </li>
-      <button type="submit" class="btn btn-danger">Enviar dinero</button>
-    </form>
+
+    <li class="list-group-item">
+      <div class="contact-info d-flex justify-content-between">
+        <span class="contact-name">Nombre: Jorge</span>
+        <span class="contact-details">Rut: 12345678-K, Banco: Banco Estado, Alias: Jorge</span>
+        <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
+        <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
+      </div>
+    </li>
+    
+  </ul>
+</div>
+
+  <div class="modal fade" id="modalcontacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Contacto</h5>
+        <button type="button" id="close1" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="agregarNombre" class="col-form-label">Nombre (*):</label>
+            <input type="text" class="form-control" id="agregarNombre" placeholder="Nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="agregarRut" class="col-form-label">Rut (*):</label>
+            <input type="text" class="form-control" id="agregarRut" placeholder="Rut" required>
+          </div>
+          <div class="form-group">
+            <label for="agregarBanco" class="col-form-label">Banco (*):</label>
+            <input type="text" class="form-control" id="agregarBanco" placeholder="Banco" required>
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="btnAgregardatos">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <br>
 <div class="d-flex justify-content-center">
-    <a href="menu.html" class="btn btn-secondary">Volver al Menú Principal</a>
+    <a href="menu.html" class="btn btn-secondary">Volver al Menú Principal ⬅️</a>
   </div>  
   </div>    
 
