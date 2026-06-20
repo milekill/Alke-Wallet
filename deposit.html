@@ -13,9 +13,11 @@
     <title>Depositar</title>
 </head>   
     
-<header>
-      <div>
-        <h1>Alke-Wallet</h1>
+<header  id="miCuadrado2" class="cuadrocielo">
+    <div class="container">
+      <div class="d-flex justify-content-center d-flex align-items-center">
+        <img src="./assets/img/bille5.png" alt="" class="" width="80" ><h1>Alke Wallet</h1>
+      </div>
     </div>
 </header>
 
@@ -30,20 +32,46 @@
     <div class="col-md-6">
     <h2>Depositar</h2>
     
-      <div class="form-group">
-        <label for="monto">Monto a Depositar :</label>
-        <input type="number" class="form-control" id="monto" placeholder="Ingresar Monto" min="2">
-      </div>
+
+        <div class="input-group input-group mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control text-right" id="monto" value="" aria-label="Saldo">
+          <div class="input-group-append">
+          <span class="input-group-text">Pesos</span>
+          </div>
+        </div>
 
 
 
-      <div>
-      <button id="sumarbtn" class="btn btn-success">Deposito</button>
-      <button id="restarbtn" class="btn btn-danger">Retirar</button>
+
+
+      <div class="d-flex justify-content-center">
+      <button id="sumarbtn" class="btn btn-success col-4 m-2">Deposito</button>
+      <button id="restarbtn" class="btn btn-warning col-4 m-2">Retirar</button>
       </div>
 
       <div id="resultado" class="alert alert-info mt-3" style="display: none"></div>
+
+    <div class="">
+        <label for="dolar">Convertidor a Dolares :</label>
+        <div class="input-group input-group col-md-10">
+          <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control text-right" id="dolar" value="" aria-label="Conversion" readonly>
+          <div class="input-group-append">
+          <span class="input-group-text">Dolares</span>
+          </div>
+        </div>
+          <label for="dolar">Valor del Dolar: $ 900 pesos.</label>
+      </div>
+
+
     </div>
+
+
 
 <br>
 
@@ -56,16 +84,20 @@
           <div class="input-group-prepend">
           <span class="input-group-text">$</span>
           </div>
-          <input type="text" class="form-control" id="balance" value="1000" aria-label="Amount (to the nearest dollar)" disabled>
+          <input type="text" class="form-control text-right" id="balance" value="1.200.000" aria-label="Saldo" readonly>
           <div class="input-group-append">
           <span class="input-group-text">Pesos</span>
           </div>
         </div>
+
+
 </div>
       </div>
       <div id="resultado2" class="alert alert-info mt-3" style="display: none"></div>
 
 </div>
+
+
 
 <div class="d-flex justify-content-center">     
     <a href="./menu.html" class="btn btn-secondary">Volver al Menú Principal ⬅️</a>
@@ -87,9 +119,10 @@
 
 </main>
 
-<footer>
+<footer class="cuadrocielo">
     <div>
-        <p>AMS</p>
+        <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
+        <p >Contacto: info@alkewallet.cl</p>
     </div>
 </footer>
 

@@ -13,9 +13,11 @@
     <title>Menu</title>
 </head>   
     
-<header>
-      <div>
-        <h1>Alke-Wallet</h1>
+<header  id="miCuadrado2" class="cuadrocielo">
+    <div class="container">
+      <div class="d-flex justify-content-center d-flex align-items-center">
+        <img src="./assets/img/bille5.png" alt="" class="" width="80" ><h1>Alke Wallet</h1>
+      </div>
     </div>
 </header>
 
@@ -27,13 +29,212 @@
 
 
 
+<section class="container mt-4">
+        <h1 class="mb-3">Mi Billetera Digital</h1>
 
-  <div class="container">
-    <h2>Menú Principal</h2>
-    <div class="form-group">
-      <label for="balance">Dinero en su cuenta:</label>
-      <h3>$180.000</h3>
-    </div>
+        <section class="row overflow-hidden border p-3 rounded-lg shadow">
+
+            <div class="col-lg-4">
+                <h2 class="h5 mb-4">Resumen</h2>
+                <div class="card p-3 border border-success rounded-lg shadow-lg">
+
+                    <p class="h4 mb-2"><strong>Saldo total: </strong></p>
+                    <div class="input-group input-group-lg mb-3">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" class="form-control text-right" id="balance2" value="1.200.000" aria-label="Saldo" disabled>
+                      <div class="input-group-append">
+                      <span class="input-group-text">Pesos</span>
+                      </div>
+                    </div>
+
+                    <p class="h5 mb-1 text-success"><strong >Variacion hoy: </strong> +0.5%</p>
+                    <p class="h6 mb-0 text-muted">Actualizado: hace 2 min</p>
+                
+                </div>
+
+            <br>
+
+            </div>
+            <div class="col-lg-8 rounded-lg overflow-hidden bg-light border border-success p-3 shadow-sm">
+            <h2 class="h5 mb-3">Mis Activos</h2>
+            <div class="table-responsive rounded-lg bg-light">
+                <table class="table table-hover">
+                    <thead class="table-success">
+                        <tr>
+                            <th class="text-left">Activos</th>
+                            <th class="text-center">Saldo</th>
+                            <th class="text-center">Moneda</th>
+                            <th class="text-center">Valor Actual</th>
+                            <th class="text-center">Variacion</th>
+                        </tr>
+                    </head>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">Cuenta Corriente</td>
+                            <td class="text-right">$450.000</td>
+                            <td class="text-right">Pesos</td>
+                            <td class="text-right">$450.000</td>
+                            <td class="text-success text-center">+2.1%</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Cuenta Visa</td>
+                            <td class="text-right">$80.000</td>
+                            <td class="text-right">Pesos</td>
+                            <td class="text-right">$0</td>
+                            <td class="text-danger text-center">-0.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Cuenta Ahorro</td>
+                            <td class="text-right">$1.280.000</td>
+                            <td class="text-right">Pesos</td>
+                            <td class="text-right">$1.280.000</td>
+                            <td class="text-success text-center">+0.2%</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Cuenta Internacional</td>
+                            <td class="text-right">$300.00</td>
+                            <td class="text-right">Dolares</td>
+                            <td class="text-right">$289.521</td>
+                            <td class="text-success text-center">+2.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+        </section>
+
+        
+         <section class="row border m-2 p-1 rounded-lg shadow bg-light">
+
+            <div class="col-md-2">
+                <h2 class="h5 mt-3">Acciones Rapidas:</h2>
+              </div>
+
+<div class="col-md-10">
+            <div class="d-flex align-content-stretch justify-content-evenly flex-nowrap p-1 gap-1 overflow-auto rounded-lg" >
+            <div class="bg-white rounded-lg d-flex">
+            <a class="btn btn-outline-primary rounded-lg p-4 shadow-sm" href="./deposit.html" role="button">Depositar</a>
+            </div>
+            <div class="bg-white rounded-lg d-flex">
+            <a class="btn btn-outline-warning rounded-lg p-3 shadow-sm" href="./sendmoney.html" role="button">Enviar Dinero</a>
+            </div>
+            <div class="bg-white rounded-lg d-flex">
+            <a class="btn btn-outline-danger rounded-lg p-4 shadow-sm" href="./traspaso.html" role="button">Traspaso</a>
+            </div>
+
+            <div class="bg-white rounded-lg d-flex">
+            <a class="btn btn-outline-secondary rounded-lg p-3 shadow-sm" href="./transactions.html" role="button">Ultimos Movimientos</a>
+            </div>
+            <div class="bg-white rounded-lg d-flex">
+            <a class="btn btn-outline-success rounded-lg p-3 shadow-sm" href="./creadestino.html" role="button">Agregar Contacto</a>
+            </div>
+            <div class="bg-white rounded-lg d-flex">
+            <a class="btn btn-outline-info rounded-lg p-4 shadow-sm" href="./contactlist.html" role="button">Contactos</a>
+            </div>
+            </div>
+
+</div>
+            
+
+        </section>
+
+
+
+
+ <section class="row g-2">
+
+          <div class="col-lg-2">
+            </div>
+            <div class="col-lg-12 overflow-hidden border p-3 rounded-lg shadow bg-mi-color">
+                <div class="container d-flex justify-content-between">
+            <h2 class="h5">Ultimos Movimientos</h2>
+            <div class="bg-white rounded-lg shadow">
+            <a class="btn btn-outline-success rounded-lg shadow" href="./transactions.html" id="btnenviardinero" type="button">Ver Mas</a>
+            </div>
+            </div>
+            
+
+            <br>
+
+
+            <div class="table-responsive text-center rounded-lg bg-white">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                          <tr>
+                            <th>Cuenta</th>
+                            <th>Tipo</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Valor</th>
+                        </tr>
+                    </head>
+                    <tbody>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-success">Ingreso</td>
+                            <td>15/02/2026</td>
+                            <td>13:15 Hrs</td>                            
+                            <td class="text-success">+$10.990</td>
+                        </tr>
+                        <tr>
+                            <td>Visa</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>14/02/2026</td>
+                            <td>15:30 Hrs</td>
+                            <td class="text-danger">-$12.990</td>
+                        </tr>
+                        <tr>
+                            <td>Debito</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>
+                            <td class="text-danger">-$8.990</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-success">Ingreso</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-success">+$10.990</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$12.990</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$22.990</td>
+                        </tr>    
+     
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+         <div class="col-lg-4"></div>
+         
+
+        </section>
+
+       
+</section>
+
+
+
+
+
+
+  <div class="d-flex container justify-content-around p-2">
     <a href="./deposit.html" class="btn btn-primary">Depositar</a>
     <a href="./sendmoney.html" class="btn btn-warning">Enviar Dinero</a>
     <a href="./transactions.html" class="btn btn-secondary">Últimos Movimientos</a>
@@ -41,7 +242,9 @@
     </div>
 
 
-
+<div class="d-flex justify-content-center mt-5"> 
+    <a href="./menu.html" class="btn btn-outline-primary">Volver Arriba</a>
+</div>
 
 
 
@@ -73,9 +276,10 @@
 
 </main>
 
-<footer>
+<footer class="cuadrocielo">
     <div>
-        <p>AMS</p>
+        <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
+        <p >Contacto: info@alkewallet.cl</p>
     </div>
 </footer>
 

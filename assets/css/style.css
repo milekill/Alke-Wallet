@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+.bg-mi-colo{background: #ff0000;
+}
+
+.cuadrocielo{
+    position: relative;
+    z-index:1;
+    overflow:hidden; /*if you want to crop the image*/
+}
+.cuadrocielo:before{
+    z-index:-1;
+    position:absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    content: url('/assets/img/nubes1.jpg');
+    opacity:0.2;
+}
 
 .roboto-condensed-Roboto {
   font-family: "Roboto Condensed", sans-serif;
@@ -78,7 +94,7 @@ footer{
     }
 
     main{
-        max-width: 800px;
+        max-width: 1024px;
         margin: 40px auto;
         padding: 0 40px;
     }

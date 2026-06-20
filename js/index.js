@@ -26,6 +26,16 @@ $(function () {
 
 
 
+//imagen index
+$(function () {
+  const cuadrado = document.getElementById('miCuadrado');
+
+  cuadrado.style.backgroundImage = "url('/assets/img/nubes1.jpg')";
+  cuadrado.style.backgroundSize = "cover";       // Ajusta la imagen al tamaño del cuadrado
+  cuadrado.style.backgroundPosition = "center";  // Centra la imagen
+  cuadrado.style.backgroundRepeat = "no-repeat"; // Evita que la imagen se repita
+  });
+
 
 
 //Calculo Credito
@@ -133,24 +143,52 @@ $(function () {
 //});
 
 //Buscador al escribir
-$(function () {
-const inputBusqueda = document.getElementById('buscador');
-const items = document.querySelectorAll('#contactList li');
+// $(function () {
+//const inputBusqueda = document.getElementById('');
+//const items = document.querySelectorAll('#3 li');
 
-inputBusqueda.addEventListener('input', (evento) => {
-  const textoEscrito = evento.target.value.toLowerCase();
+//inputBusqueda.addEventListener('input', (evento) => {
+ // const textoEscrito = evento.target.value.toLowerCase();
 
-  items.forEach(item => {
-    const textoItem = item.textContent.toLowerCase();
+//  items.forEach(item => {
+  //  const textoItem = item.textContent.toLowerCase();
 
-    if (textoItem.includes(textoEscrito)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
+ //   if (textoItem.includes(textoEscrito)) {
+ //     item.style.display = 'block';
+ //   } else {
+ //     item.style.display = 'none';
+ //   }
+//  });
+//});
+//});
+
+
+//Filtrar tabla
+function filtrarTabla() {
+    // 1. Obtener el texto del buscador y pasarlo a minúsculas
+    const input = document.getElementById("buscador");
+    const filtro = input.value.toLowerCase();
+    
+    // 2. Obtener las filas del cuerpo de la tabla
+    const tabla = document.getElementById("contactList");
+    const filas = tabla.getElementsByTagName("tr");
+
+    // 3. Recorrer todas las filas (omitiendo el encabezado i=0)
+    for (let i = 1; i < filas.length; i++) {
+        const fila = filas[i];
+        // Obtener el texto completo de la fila
+        const textoFila = fila.textContent || fila.innerText;
+
+        // 4. Mostrar la fila si coincide con el filtro, ocultarla si no
+        if (textoFila.toLowerCase().indexOf(filtro) > -1) {
+            fila.style.display = "";
+        } else {
+            fila.style.display = "none";
+        }
     }
-  });
-});
-});
+}
+
+
 
 
 
@@ -158,53 +196,93 @@ inputBusqueda.addEventListener('input', (evento) => {
 $('').toast('show');
 
 
-$(function () {
-//Modal Agrega Contacto
-const cerrarform = document.getElementById('btnAgregardatos');
-const modal = document.getElementById('close1');
+// Form Validaciones crea contacto
+(() => {
+  'use strict'
 
-  
-    cerrarform.addEventListener('click', () => {
-        modal.click();
-    });
-});
+  const forms = document.querySelectorAll('.needs-validation')
+  const formulario = document.getElementById('crearcontacto');
+
+
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      else{
+      event.preventDefault();
+
+      }
+
+      form.classList.add('was-validated')
+      
+      
+    }, false)
+  })
+})()
+
+
 
 
 
 
 //Crear y Borrar Contacto
 $(function () {
+const cerrarform = document.getElementById('btnAgregardatos');
+const modal = document.getElementById('close1');
 
     $("#btnAgregardatos").on("click", function () {
         let nombre = $("#agregarNombre").val();
+        let apellido = $("#agregarApellido").val();  
         let rut = $("#agregarRut").val();
-        let banco = $("#agregarBanco").val();   
+        let banco = $("#agregarBanco").val();
+        let tcuenta = $("#agregarTcuenta").val();
+        let ncuenta = $("#agregarNcuenta").val();   
+        let alias = $("#agregarAlias").val();  
+        let cresh = 5;
+        cresh++;  
 
-      if (isNaN(nombre) && isNaN(rut) && isNaN(banco)) {
-        let alias = prompt("Ingrese un alias");
+      if (isNaN(nombre) && isNaN(apellido)) {
+//        let alias = prompt("Ingrese un Alias");
+        let cresh = 5;
+        cresh++;  
         $("#contactList")
         .append(
             `
-            <li class="list-group-item">
-            <div class="contact-info d-flex justify-content-between">
-              <span class="contact-name">Nombre: `+nombre+`</span>
-              <span class="contact-details">Rut: `+rut+`, Banco: `+banco+`, Alias: `+alias+`</span>
-            <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
-            <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
-            </div>
-            </li>
+            <tr>
+                <td>`+cresh+`</td>
+                <td>`+nombre+" "+apellido+`</td>
+                <td>`+rut+`</td>
+                <td>`+alias+`</td>                
+                <td>`+banco+`</td>
+                <td>`+tcuenta+`</td>
+                <td>`+ncuenta+`</td>
+                <td class="text-success"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-sm btn-success enviar-btn">Enviar Dinero</button>
+                    <button type="button" class="btn btn-sm btn-warning">Modificar</button>
+                    <button type="button" class="btn btn-sm btn-danger delete-btn">Borrar</button>
+            </div></td>
+            </tr>
             `,
         )
                     .fadeIn("slow");            
-        alert("Contacto "+alias+ " creado exitosamente")
+        alert("Contacto "+nombre+" "+apellido+" creado exitosamente")
         $("#agregarNombre").val("");
+        $("#agregarApellido").val("");
         $("#agregarRut").val("");
         $("#agregarBanco").val("");
-        console.log("li creado")
+        $("#agregarTcuenta").val("");
+        $("#agregarNcuenta").val("");
+        $("#agregarAlias").val("");
+        console.log("tr creado")
+        modal.click();
+  
+
 
       } 
       else {
-            alert('Agrega los datos de nuevo contacto con (*). Inténtalo de nuevo.');
+//            alert('Agrega los datos de nuevo contacto con (*). Inténtalo de nuevo.');
       }
 
     });
@@ -212,8 +290,8 @@ $(function () {
     $(".delete-btn").on("click", function () {
     if(confirm("desea eliminar contacto?")){
     console.log("clink en delete")
-    $(this).parent().parent().remove()
-    console.log("li eliminado")
+    $(this).parent().parent().parent().remove()
+    console.log("tr eliminado")
 
     return
     }
@@ -314,23 +392,61 @@ $(document).ready(function() {
 //Sumar Dinero
 $(document).ready(function() {
   let balance = parseFloat($('#balance').val());
-  const ahora = new Date();
+  //Formato Dinero Chile
+  let valorTexto = document.getElementById("balance").value;
+  let numeroLimpio = Number(valorTexto.replace(/\./g, ''));
+
+
+let input = document.getElementById('monto');
+
+     //listener conversion dolares
+input.addEventListener('input', function() {
+let valor5 = document.getElementById('monto').value;
+
+let numeroLimpio4 = Number(valor5.replace(/\./g, ''));
+
+let dolarvalor = "900"
+
+ conversionpeso = numeroLimpio4 * dolarvalor
+  conversiondolar = numeroLimpio4 / dolarvalor
+
+
+let resultadoFormateadodolarpeso = conversionpeso.toLocaleString('es-CL'); 
+console.log("conversion a peso frm",resultadoFormateadodolarpeso)
+
+let resultadoFormateadopesodolar = conversiondolar.toLocaleString('es-CL'); 
+console.log("conversion a dolar frm",resultadoFormateadopesodolar)
+
+$('#dolar').val(resultadoFormateadopesodolar);
+$('#sumarbtn').click(function() {
+  $('#dolar').val('');
+});
+$('#restarbtn').click(function() {
+  $('#dolar').val('');
+});
+
+
+});
+
+
 
   function updateBalance() {
-    $('#balance').text(balance.toFixed(0));
+    $('#balance').text(numeroLimpio.toFixed(0));
   }
 
   $('#sumarbtn').click(function() {
     var amount = parseFloat($('#monto').val());
-    console.log(ahora.toLocaleTimeString()); 
+    const ahorasumar = new Date();
 
-
-    retirado = balance;
+    retirado = numeroLimpio;
+    let resultadoFormateadoretirado1 = retirado.toLocaleString('es-CL'); 
+    let resultadoFormateadomonto1 = amount.toLocaleString('es-CL'); 
     if (!isNaN(amount) && amount > 0) {
-      balance += amount;
+      numeroLimpio += amount;
+      let resultadoFormateado = numeroLimpio.toLocaleString('es-CL'); 
       updateBalance();
       $('#monto').val('');
-      $('#balance').val(balance);
+      $('#balance').val(resultadoFormateado);
       alert('Deposit realizado!');
       $("#resultado")
         .removeClass("alert-info")
@@ -352,26 +468,26 @@ $(document).ready(function() {
         .append(
             `
             <div class="toast-header bg-success">
-              <p class="rounded mr-2">💰</p>
-              <strong class="mr-auto">Recibo</strong>
-              <small class="text-muted">${ahora.toLocaleTimeString("en-US")}</small>
+              <p class="mr-2">💰</p>
+              <strong class="mr-5">Recibo de Deposito</strong>
+              <small class="text-muted">${ahorasumar.toLocaleTimeString("es-CL")}</small>
               <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="toast-body" id="">
               <strong><u>Deposito</u></strong><br>
-              Cantidad Depositada: <strong> $${amount.toFixed(0)} </strong><br>
-              Balance Anterior: <strong> $${retirado.toFixed(0)} </strong><br>
-              Saldo Actualizado:<strong> $${balance.toFixed(0)} </strong>
+              Cantidad Depositada: <strong> + $${resultadoFormateadomonto1} </strong><br>
+              Balance Anterior: <strong> $${resultadoFormateadoretirado1} </strong><br>
+              Saldo Actualizado:<strong> $${resultadoFormateado} </strong>
             </div>
 
             `,
         )
         
 
-        $('#toast1').toast('show');
-            
+        $('#toast1').toast('show')
+        .fadeIn("slow"); 
 
       return;   
 
@@ -391,13 +507,17 @@ $(document).ready(function() {
 
 //Restar Dinero
   $('#restarbtn').click(function() {
+    const ahorarestar = new Date();
     var amount = parseFloat($('#monto').val());
-    retirado = balance;
-    if (!isNaN(amount) && amount > 0 && amount <= balance) {
-      balance -= amount;
+    retirado = numeroLimpio;
+    let resultadoFormateadoretirado2 = retirado.toLocaleString('es-CL'); 
+    let resultadoFormateadomonto2 = amount.toLocaleString('es-CL'); 
+    if (!isNaN(amount) && amount > 0 && amount <= numeroLimpio) {
+      numeroLimpio -= amount;
+      let resultadoFormateado2 = numeroLimpio.toLocaleString('es-CL'); 
       updateBalance();
       $('#monto').val('');
-      $('#balance').val(balance);
+      $('#balance').val(resultadoFormateado2);
       alert('Retiro exitoso!');
       $("#resultado")
         .removeClass("alert-info")
@@ -418,25 +538,26 @@ $(document).ready(function() {
         .append(
             `
             <div class="toast-header bg-warning">
-              <p class="rounded mr-2">💰</p>
-              <strong class="mr-auto">Recibo</strong>
-              <small class="text-muted">${ahora.toLocaleTimeString("en-US")}</small>
+              <p class="mr-2">💰</p>
+              <strong class="mr-5">Recibo de Retiro</strong>
+              <small class="text-muted">${ahorarestar.toLocaleTimeString("es-CL")}</small>
               <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="toast-body" id="">
               <strong><u>Retiro</u></strong><br>
-              Cantidad Retirada: <strong> $${amount.toFixed(0)} </strong><br>
-              Balance Anterior: <strong> $${retirado.toFixed(0)} </strong><br>
-              Saldo Actualizado:<strong> $${balance.toFixed(0)} </strong>
+              Cantidad Retirada: <strong> - $${resultadoFormateadomonto2} </strong><br>
+              Balance Anterior: <strong> $${resultadoFormateadoretirado2} </strong><br>
+              Saldo Actualizado:<strong> $${resultadoFormateado2} </strong>
             </div>
 
             `,
         )
         
 
-        $('#toast1').toast('show');
+        $('#toast1').toast('show')
+        .fadeIn("slow");    
 
 
       return;        

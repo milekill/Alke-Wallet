@@ -26,63 +26,6 @@
 <div class="container">
     <h2>Enviar Dinero</h2>
 
-
-</head>
-<body>
-
-
-
-    <form>
-      <div class="container form-group">
-        <label class="" for="agregardato2">Buscar en la agenda de contactos:</label>
-        <div class="row">
-        <input type="text" class="form-control col-md-8" id="buscador" placeholder="Buscar Contacto">
-        <button type="button" class="btn btn-primary col-md-4" id="btnAgregarbuscar" hidden>Buscar contacto</button>
-      </div>
-      </div>
-
-    </form>
-
-
-<div class="container rounded border">
-<div class="row d-flex justify-content-between m-2">
- <h3 class="mt-2">Contactos</h3>
-
- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalcontacto">+ Agregar Contacto Nuevo 🙋</button>
-</div>
-
-  <ul id="contactList" class="list-group">
-
-    <li class="list-group-item">
-      <div class="contact-info d-flex justify-content-between">
-        <span class="contact-name">Nombre: Felipe</span>
-        <span class="contact-details">Rut: 12345678-K, Banco: Banco BCI, Alias: Felipe</span>
-        <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
-        <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
-      </div>
-    </li>
-
-    <li class="list-group-item">
-      <div class="contact-info d-flex justify-content-between">
-        <span class="contact-name">Nombre: Daniel</span>
-        <span class="contact-details">Rut: 12345678-K, Banco: Banco Estado, Alias: Daniel</span>
-        <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
-        <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
-      </div>
-    </li>
-
-    <li class="list-group-item">
-      <div class="contact-info d-flex justify-content-between">
-        <span class="contact-name">Nombre: Jorge</span>
-        <span class="contact-details">Rut: 12345678-K, Banco: Banco Estado, Alias: Jorge</span>
-        <button type="button" class="btn btn-sm btn-warning enviar-btn">Enviar dinero</button>
-        <button type="button" class="btn btn-sm btn-danger delete-btn">Eliminar</button>
-      </div>
-    </li>
-    
-  </ul>
-</div>
-
   <div class="modal fade" id="modalcontacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -93,29 +36,256 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="crearcontacto" class="needs-validation" novalidate>
           <div class="form-group">
             <label for="agregarNombre" class="col-form-label">Nombre (*):</label>
             <input type="text" class="form-control" id="agregarNombre" placeholder="Nombre" required>
+            <div class="invalid-feedback">
+            Ingrese primer Nombre del destinatario.
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="agregarApellido" class="col-form-label">Apellido (*):</label>
+            <input type="text" class="form-control" id="agregarApellido" placeholder="Apellido" required>
+            <div class="invalid-feedback">
+            Ingrese primer Apellido del destinatario.
+            </div>
           </div>
           <div class="form-group">
             <label for="agregarRut" class="col-form-label">Rut (*):</label>
-            <input type="text" class="form-control" id="agregarRut" placeholder="Rut" required>
+            <input type="text" class="form-control" id="agregarRut" placeholder="10100100-K" pattern="[0-9]{7,8}-[a-zA-Z0-9]{1}" minlength="9" maxlength="10"required>
+              <div class="invalid-feedback">
+               Ingrese un Rut valido de destinatario.
+              </div>
           </div>
+
           <div class="form-group">
-            <label for="agregarBanco" class="col-form-label">Banco (*):</label>
-            <input type="text" class="form-control" id="agregarBanco" placeholder="Banco" required>
-          </div>
+                <label for="agregarBanco" class="col-form-label">Banco (*):</label>
+                <select class="form-control" id="agregarBanco" required>
+                    <option selected disabled value="">Seleccione...</option>
+                     <option value="1">BCI / MACH</option>
+                    <option value="2">BANCO ESTADO</option>
+                    <option value="3">BANCO SANTANDER</option>
+                    <option value="4">BANCO DE CHILE</option>
+                    <option value="5">MERCADO PAGO</option>
+                     <option value="6">BANCO BICE</option>
+                     <option value="7">BANCO FALABELLA</option>
+                     <option value="8">BANCO ITAU</option>
+                  </select>
+                   <div class="invalid-feedback">
+                     Seleccione un Banco.
+                  </div>
+            </div>
+
           
-        </form>
-      </div>
+          <div class="form-group">
+               <label for="agregarTcuenta" class="col-form-label">Tipo de Cuenta (*):</label>
+               <select class="form-control" id="agregarTcuenta" required>
+               <option selected disabled value="">Seleccione...</option>
+               <option value="11">Cuenta Corriente</option>
+               <option value="22">Cuenta Vista</option>
+               <option value="33">Cuenta de Ahorro</option>
+               <option value="44">Cuenta Rut</option>
+             </select>
+              <div class="invalid-feedback">
+               Seleccione un tipo de cuenta.
+              </div>
+           </div>
+
+
+          <div class="form-group">
+            <label for="agregarNcuenta" class="col-form-label">Numero de Cuenta (*):</label>
+            <input type="text" class="form-control" id="agregarNcuenta" placeholder="Numero de Cuenta" pattern="[0-9]{1,25}" minlength="3" maxlength="25" required>
+          <div class="invalid-feedback">
+            Ingrese un numero de cuenta valido para destinatario (solo numeros).
+          </div>
+        </div> 
+
+
+          <div class="form-group">
+            <label for="agregarAlias" class="col-form-label">Alias (Opcional):</label>
+            <input type="text" class="form-control" id="agregarAlias" placeholder="Numero de cuenta" minlength="1">
+          <div class="invalid-feedback">
+            Ingrese un Alias para el destinatario.
+          </div>        
+        </div>
+  
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" id="btnAgregardatos">Agregar</button>
+        <button type="submit" class="btn btn-primary" id="btnAgregardatos">Agregar</button>
+ 
       </div>
+          </form>
+      </div>
+
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+<section class="container">
+        <h1 class="mb-3 col-lg-9">Lista de Contactos Registrados</h1>
+</section>
+
+<section class="container overflow-hidden border p-3 rounded-lg shadow bg-mi-color">
+  <div class="container">
+  <div class="col-md-12"></div>
+
+    
+            <div class="container-fluid g-1 p-3 rounded-lg shadow bg-white">
+            <label class="" for="buscador">Buscar en la agenda de contactos:</label>
+             <form class="d-flex col-md-12" role="search">
+            <input class="form-control me-2" list="datalistOptions" type="search" id="buscador" placeholder="Buscar Contacto" aria-label="Search" onkeyup="filtrarTabla()"/>
+        <datalist id="datalistOptions">
+        <option value="Pedro Casas - Cuenta Rut">
+        <option value="Pedro Ramirez - Banco Chile">
+        <option value="Daniel Lagos- Banco BCI">
+        <option value="Samuel Lopez - Banco Fallabella">
+        <option value="Reinaldo - Banco Santander">
+    </datalist>
+             <button class="btn btn-outline-success col-md-4" type="button">Buscar</button>
+            </form>
+            </div>
+<br>
+                    <div class="card g-4">
+                    <p class="h6 m-2"><strong>Cantidad de contactos encontrados: </strong>5</p>
+                </div>
+    </div>
+
+
+</section>
+
+        <section class="row">
+            <div class="container p-2">
+
+          <div class="col-lg-2">
+            </div>
+            <div class="col-lg-12 overflow-hidden border p-3 rounded-lg shadow-lg bg-mi-color">
+            <div class="container d-flex justify-content-between">
+            <h2 class="h5 m-2">Mis Contactos</h2>
+            <div class="bg-white rounded-3 shadow">
+            <button class="btn btn-outline-success rounded-3 shadow p-2" id="agregarcontacto" data-toggle="modal" data-target="#modalcontacto" type="button">+ Agrega Nuevo Contacto</button>
+            </div>
+            </div>
+            <br>
+            <div class="table-responsive text-center rounded-lg bg-white">
+                <table class="table table-hover" id="contactList">
+                    <thead class="table-info">
+                        <tr>
+                            <th>Num</th>
+                            <th>Nombres</th>
+                            <th>Rut</th>
+                            <th>Alias</th>                            
+                            <th>Banco</th>
+                            <th>Tipo de Cuenta</th>
+                            <th>N° de Cuenta</th>
+                            <th class="">Acciones</th>
+                        </tr>
+                    </head>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Pedro Casas</td>
+                            <td>15.654.247-2</td>
+                            <td>Pedro</td>                             
+                            <td>Santander</td>                        
+                            <td>Visa</td>
+                            <td>555-6667-8889</td>
+                            <td class="text-success"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                    <button type="button" class="btn btn-sm btn-success enviar-btn">Enviar Dinero</button>
+                                                    <button type="button" class="btn btn-sm btn-warning">Modificar</button>
+                                                    <button type="button" class="btn btn-sm btn-danger delete-btn">Borrar</button>
+                    </div></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Pedro Ramirez</td>
+                            <td>15.654.247-2</td>
+                            <td>Rambo</td>                              
+                            <td>Chile</td>
+                            <td>Corriente</td>
+                            <td>555-6667-9999</td>
+                            <td class="text-success"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                    <button type="button" class="btn btn-sm btn-success enviar-btn">Enviar Dinero</button>
+                                                    <button type="button" class="btn btn-sm btn-warning">Modificar</button>
+                                                    <button type="button" class="btn btn-sm btn-danger delete-btn">Borrar</button>
+                    </div></td>
+                        </tr>
+                                                <tr>
+                            <td>3</td>
+                            <td>Daniel Lagos</td>
+                            <td>18.456.247-2</td>
+                            <td>Dan</td>
+                            <td>BCI</td>
+                            <td>Ahorro</td>
+                            <td>222-6667-8889</td>
+                            <td class="text-success"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                    <button type="button" class="btn btn-sm btn-success enviar-btn">Enviar Dinero</button>
+                                                    <button type="button" class="btn btn-sm btn-warning">Modificar</button>
+                                                    <button type="button" class="btn btn-sm btn-danger delete-btn">Borrar</button>
+                    </div></td>
+                        </tr>
+                                                <tr>
+                            <td>4</td>
+                            <td>Samuel Lopez</td>
+                            <td>16.654.247-2</td>
+                            <td>Sam</td>
+                            <td>Falabella</td>
+                            <td>Corriente</td>
+                            <td>444-6667-8889</td>
+                            <td class="text-success"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                    <button type="button" class="btn btn-sm btn-success enviar-btn">Enviar Dinero</button>
+                                                    <button type="button" class="btn btn-sm btn-warning">Modificar</button>
+                                                    <button type="button" class="btn btn-sm btn-danger delete-btn">Borrar</button>
+                    </div></td>
+                        </tr>
+                                                <tr>
+                            <td>5</td>
+                            <td>Pedro Casas</td>
+                            <td>15.654.247-2</td>
+                            <td>Casas</td>
+                            <td>Santander</td>
+                            <td>Visa</td>
+                            <td>555-6667-8889</td>
+                            <td class="text-success"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                    <button type="button" class="btn btn-sm btn-success enviar-btn">Enviar Dinero</button>
+                                                    <button type="button" class="btn btn-sm btn-warning">Modificar</button>
+                                                    <button type="button" class="btn btn-sm btn-danger delete-btn">Borrar</button>
+                    </div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+         <div class="col-lg-4"></div>
+         </div>
+
+        </section>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br>
@@ -128,9 +298,10 @@
 
 </main>
 
-<footer>
+<footer class="cuadrocielo">
     <div>
-        <p>AMS</p>
+        <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
+        <p >Contacto: info@alkewallet.cl</p>
     </div>
 </footer>
 
@@ -139,6 +310,15 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 <script src="./js/index.js"></script>    
+
+
+<script>
+   // document.getElementById("agregarcontacto").addEventListener('click', function(event) {
+        
+     //   window.location.href = "./creadestino.html"
+   // });
+</script>
+
 
 </body>
 </html>
