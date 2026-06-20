@@ -12,9 +12,11 @@
     <title>Iniciar Sesion</title>
 </head>
     
-<header>
-      <div>
-        <h1>Alke-Wallet</h1>
+<header  id="miCuadrado2" class="cuadrocielo shadow">
+    <div class="container">
+      <div class="d-flex justify-content-center d-flex align-items-center">
+        <img src="./assets/img/bille5.png" alt="" class="" width="80" ><h1>Alke Wallet</h1>
+      </div>
     </div>
 </header>
 
@@ -23,44 +25,81 @@
 
 <body>
 
+   
 
-  <div class="container">
+
+<div class="container p-5">
+ 
+<section class="container overflow-hidden border p-5 rounded shadow-lg bg-white">
     <h2>Inicio de Sesion</h2>
-    <p>(usuario:admin / pass:123456)</p>
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="username">Usuario:</label>
-        <input type="username" class="form-control" id="username" placeholder="Ingresar Usuario" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Contraseña:</label>
-        <input type="password" class="form-control" id="password" placeholder="Ingresar Contraseña" required>
-      </div>
+    <p>(usuario:admin / pass:123456)</p>  
+
+<form id="loginForm">
+
+<div class="form-floating mb-3 rounded">
+  <label for="username">Usuario</label>
+  <input type="username" class="form-control shadow-sm" id="username" aria-describedby="inputGroupPrepend2" placeholder="Ingresar Usuario" required>
+
+</div>
+
+
+<div class="form-floating rounded">
+   <label for="password">Contraseña</label>
+  <input type="password" class="form-control shadow-sm" id="password" placeholder="Ingresar Contraseña" minlength="6" maxlength="20" required>
+</div>
+
+
+<br>
+
+<div class="container"></div>
+
+<div class="row">
+  <div class="col text-left">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Recordar Usuario</label>
+    </div>
+  </div>
+    <div class="col text-right">
+      <p><a href="./forgotpass.html" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Olvide mi Contraseña</a></p>
+    </div>
+  </div>
+
+
+<br>
 
 <div class="d-flex justify-content-around">
-      <button type="submit" class="btn btn-primary">Iniciar sesion</button>
-       <a href="./forgotpass.html" class="link">Olvide mi contraseña</a>
-</div>      
-    </form>
-
-<div class="d-flex justify-content-center m-3"> 
-    <a href="./createacount.html" class="btn btn-secondary">Crear Cuenta</a>
+  <button class="btn btn-primary rounded shadow-sm col-8" type="submit">Iniciar Sesion</button>
 </div>
 
-<div class="d-flex justify-content-center p-4"> 
-    <a href="./index.html" class="btn btn-outline-primary">Volver Atras</a>
+</form>
+
+</section>
+</div> 
+
+
+
+<div class="container">
+
+
+<div class="d-flex justify-content-center m-1"> 
+<div class="container text-center">
+  <p>Si aun no tienes tu cuenta, crea una nueva en : <a href="./createacount.html" class="btn btn-outline-secondary">Crear Cuenta</a></p>
+</div>
+</div>
+<div class="d-flex justify-content-center p-2"> 
+    <a href="./index.html" class="btn btn-outline-primary">Volver Atras ◀️</a>
 </div>
 
 </div>
-
-
 
 <br>
 </main>
 
-<footer>
+<footer class="cuadrocielo shadow">
     <div>
-        <p>AMS</p>
+        <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
+        <p >Contacto: info@alkewallet.cl</p>
     </div>
 </footer>
 
@@ -69,7 +108,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-<script src="./js/index.js"></script>    
+<script src="./assets/js/index.js"></script>   
 
 </body>
 </html>

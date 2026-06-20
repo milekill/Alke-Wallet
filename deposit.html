@@ -13,7 +13,7 @@
     <title>Depositar</title>
 </head>   
     
-<header  id="miCuadrado2" class="cuadrocielo">
+<header  id="miCuadrado2" class="cuadrocielo ">
     <div class="container">
       <div class="d-flex justify-content-center d-flex align-items-center">
         <img src="./assets/img/bille5.png" alt="" class="" width="80" ><h1>Alke Wallet</h1>
@@ -24,15 +24,15 @@
 <main>
 
 <body>
-
-  <div class="container">
+    <h2 class="m-2">Deposito y Retiro de Dinero</h2>
+  <div class="container border rounded p-2 bg-white">
 
     <div class="row m-2">
 
     <div class="col-md-6">
-    <h2>Depositar</h2>
+    <h2>Depositar / Retirar</h2>
     
-
+<br>
         <div class="input-group input-group mb-3">
           <div class="input-group-prepend">
           <span class="input-group-text">$</span>
@@ -44,12 +44,12 @@
         </div>
 
 
-
+      <div id="resultado" class="alert alert-info mt-3" style="display: none"></div>
 
 
       <div class="d-flex justify-content-center">
-      <button id="sumarbtn" class="btn btn-success col-4 m-2">Deposito</button>
-      <button id="restarbtn" class="btn btn-warning col-4 m-2">Retirar</button>
+      <button id="sumarbtn" class="btn btn-success col-4 m-2 p-2">Deposito</button>
+      <button id="restarbtn" class="btn btn-warning col-4 m-2 p-3">Retirar</button>
       </div>
 
       <div id="resultado" class="alert alert-info mt-3" style="display: none"></div>
@@ -84,7 +84,7 @@
           <div class="input-group-prepend">
           <span class="input-group-text">$</span>
           </div>
-          <input type="text" class="form-control text-right" id="balance" value="1.200.000" aria-label="Saldo" readonly>
+          <input type="text" class="form-control text-right" id="balance" value="1.200.000" aria-label="Saldo" onkeyup="accionarconvertor()" readonly>
           <div class="input-group-append">
           <span class="input-group-text">Pesos</span>
           </div>
@@ -97,14 +97,14 @@
 
 </div>
 
-
-
+</div>
+<br>
 <div class="d-flex justify-content-center">     
-    <a href="./menu.html" class="btn btn-secondary">Volver al Menú Principal ⬅️</a>
+    <a href="./menu.html" class="btn btn-outline-primary">Volver al Menú Principal ⬅️</a>
 </div> 
 
 
-</div>
+
 
 <br>
 
@@ -119,7 +119,7 @@
 
 </main>
 
-<footer class="cuadrocielo">
+<footer class="cuadrocielo shadow">
     <div>
         <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
         <p >Contacto: info@alkewallet.cl</p>
@@ -130,7 +130,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-<script src="./js/index.js"></script>
+<script src="./assets/js/index.js"></script>
 
 </body>
 </html>

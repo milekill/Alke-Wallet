@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    
+    <title>Depositar</title>
+</head>   
+    
+<header  id="miCuadrado2" class="cuadrocielo ">
+    <div class="container">
+      <div class="d-flex justify-content-center d-flex align-items-center">
+        <img src="./assets/img/bille5.png" alt="" class="" width="80" ><h1>Alke Wallet</h1>
+      </div>
+    </div>
+</header>
+<body>
+<main>
+
+
+<div class="container p-3">
+
+<section class="container">
+        <h1 class="mb-3">Agrega Nuevo Destinatario</h1>
+</section>
+<br>
+
+
+<div class="container">
+
+<form id="crearcontacto" class="row g-3 needs-validation" novalidate>
+
+<section class="container-fluid rounded overflow-hidden border p-3 shadow bg-white">
+
+<div class="row g-2">
+
+<h3 class="col-md-12">Datos Personales</h3>
+
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" id="validationCustom01" required>
+     <div class="invalid-feedback">
+        Ingrese primer Nombre del destinatario.
+      </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Apellido:</label>
+    <input type="text" class="form-control" id="validationCustom02" required>
+     <div class="invalid-feedback">
+        Ingrese primer Apellido del destinatario.
+      </div>
+  </div>
+
+  <div class="col-md-4">
+    <label for="validationCustomRut" class="form-label">Rut:</label>
+    <input type="tel" class="form-control" id="validationCustomRut" placeholder="10100100-K" pattern="[0-9]{7,8}-[a-zA-Z0-9]{1}" minlength="9" maxlength="10" required>
+     <div class="invalid-feedback">
+        Ingrese un Rut valido de destinatario.
+      </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <label for="validationCustomMail" class="form-label">Email (Opcional):</label>
+    <input type="email" class="form-control" id="validationCustomMail" aria-describedby="inputGroupPrepend2" placeholder="usuario@mail.com">
+    <div class="invalid-feedback">
+        Ingrese un Mail valido de destinatario.
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <label for="validationCustomUsername" class="form-label">Alias (Opcional):</label>
+      <input type="text" class="form-control" id="validationCustomUsername"  aria-describedby="inputGroupPrepend" minlength="1">
+      <div class="invalid-feedback">
+        Ingrese un Alias para el destinatario.
+      </div>
+  </div>
+</div>
+<br>
+</section>
+
+<p class="h4"></p>
+
+<section class="container-fluid rounded overflow-hidden border p-3 shadow bg-white">
+<div class="row g-2"> 
+  <h3 class="col-md-12">Datos de la cuenta:</h3>
+
+    <div class="col-md-6">
+    <label for="validationCustom04" class="form-label">Banco de destino</label>
+    <select class="form-control" id="validationCustom04" required>
+      <option selected disabled value="">Seleccione...</option>
+      <option value="1">BCI / MACH</option>
+      <option value="2">BANCO ESTADO</option>
+      <option value="3">BANCO SANTANDER</option>
+      <option value="4">BANCO DE CHILE</option>
+      <option value="5">MERCADO PAGO</option>
+      <option value="6">BANCO BICE</option>
+      <option value="7">BANCO FALABELLA</option>
+      <option value="8">BANCO ITAU</option>
+    </select>
+    <div class="invalid-feedback">
+      Seleccione un Banco.
+    </div>
+  </div>
+
+    <div class="col-md-6">
+    <label for="validationCustom06" class="form-label">Tipo de Cuenta:</label>
+    <select class="form-control" id="validationCustom06" required>
+      <option selected disabled value="">Seleccione...</option>
+      <option value="11">Cuenta Corriente</option>
+      <option value="22">Cuenta Vista</option>
+      <option value="33">Cuenta de Ahorro</option>
+      <option value="44">Cuenta Rut</option>
+    </select>
+    <div class="invalid-feedback">
+      Seleccione un tipo de cuenta.
+    </div>
+  </div>
+
+
+  <div class="col-md-12">
+    <label for="validationCustom03" class="form-label">Numero de Cuenta</label>
+    <input type="text" class="form-control" id="validationCustom03" pattern="[0-9]{1,25}" minlength="3" maxlength="25" required>
+    <div class="invalid-feedback">
+      Ingrese un numero de cuenta valido para destinatario (solo numeros).
+    </div>
+  </div>
+
+  
+  <div class="col-12 ms-4 m-3">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck3">
+      <label class="form-check-label" for="invalidCheck3">
+        Desea guardar destinatario nuevo.
+      </label>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<p class="h4"></p>
+
+<section class="container-fluid rounded overflow-hidden border p-3 shadow bg-white">
+<div class="row g-2">
+  <h3 class="col-md-12">Monto de Transferencia</h3>
+
+    <div class="col-12 m-1"> 
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="invalidCheck2" onclick="toggleOcultar()">
+      <label class="form-check-label" for="invalidCheck2">
+        Desea agregar monto de transferencia (Opcional).
+      </label>
+    </div>
+  </div>
+
+<section class="container" id="miCaja" style="display: none;">
+<section class="container mt-4">
+    
+<section class="container">
+  <div class="row">
+    <div class="col-md-12 row rounded overflow-hidden border p-3 b-3 bg-white">
+      <div class="container col-md-6">
+        <h2 class="h5">Seleccione su Cuenta:</h2>
+
+
+  <div class="form-check">
+    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked">
+    <label class="form-check-label" for="validationFormCheck2">Cuenta Corriente</label>
+  </div>
+  <div class="form-check">
+    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked">
+    <label class="form-check-label" for="validationFormCheck3">Cuenta Visa</label>
+  </div>
+    <div class="form-check mb-2">
+    <input type="radio" class="form-check-input" id="validationFormCheck4" name="radio-stacked">
+    <label class="form-check-label" for="validationFormCheck4">Cuenta de Ahorro</label>
+    <div class="invalid-feedback">Seleccione una de sus cuentas!</div>
+  </div>
+
+  </div>
+
+<div class="container col-md-6 p-2 rounded shadow bg-white">
+    <label for="validationCustomSaldo" class="form-label h5">Saldo en su Cuenta:</label>
+    <div class="input-group has-validation rounded overflow-hidden border">
+    <span class="input-group-text">$</span>
+    <input type="text" class="form-control text-right" id="validationCustomSaldo" placeholder="" value="1.200.000" pattern="[1-9]{1}[0-9]{1,100}[0-9]{1,100}[0-9]{1,100}" minlength="1" aria-label="Saldo" aria-describedby="addon-wrapping" readonly required>
+    <span class="input-group-text">Pesos</span>
+    <div class="invalid-feedback">Tu saldo debe ser mayor a $1000.</div>
+    </div>
+  </div>
+
+  </div>
+</div>
+  </section>
+</section>
+
+
+<section class="container-fluid mt-4 rounded overflow-hidden border p-3 shadow-lg bg-white">
+
+<div class="col-md-12"></div>
+
+    <label for="CustomMonto" class="form-label">Monto de la Transaccion:</label>
+    <div class="input-group has-validation">
+    <span class="input-group-text">$</span>
+    <input type="text" class="form-control form-control-lg text-right" id="CustomMonto" placeholder="0" pattern="[1-9]{1}[0-9]{1,100}[0-9]{1,100}[0-9]{1,100}" minlength="1" aria-label="Monto" aria-describedby="addon-wrapping">
+        <span class="input-group-text">Pesos</span>
+    <div class="invalid-feedback">Ingrese monto de transferencia (monto minimo $1000), o deje casilla en blanco.
+    </div>
+    </div>
+</section>
+</section>
+
+</div>
+
+</section>
+
+  <div class="d-flex justify-content-center m-4">
+    <button class="btn btn-primary rounded shadow" type="submit">Agregar Destinatario y Transferir</button>
+  </div>
+
+</form>
+
+</div>
+</div>
+
+<div class="d-flex justify-content-center">     
+    <a href="./menu.html" class="btn btn-outline-primary">Volver al Menú Principal ⬅️</a>
+</div> 
+
+
+    
+</main>
+<footer class="cuadrocielo shadow">
+    <div>
+        <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
+        <p >Contacto: info@alkewallet.cl</p>
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="./assets/js/index.js"></script>
+
+
+  <script>
+(() => {
+  'use strict'
+
+  const forms = document.querySelectorAll('.needs-validation')
+  const formulario = document.getElementById('crearcontacto');
+
+
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      else{
+      event.preventDefault();
+      alert('¡Contacto Pedro Casas Agregado con exito!');
+      window.location.href = "./menu.html"
+      }
+
+      form.classList.add('was-validated')
+      
+      
+    }, false)
+  })
+})()
+    </script>
+
+        <script>
+      function toggleOcultar() {
+            var elemento = document.getElementById("miCaja");
+          
+            if (elemento.style.display === "none") {
+                elemento.style.display = "block";
+            } else {
+                elemento.style.display = "none";
+            }
+        }
+    </script>
+
+<script>
+
+  const invalidCheck = document.getElementById("invalidCheck2");
+  
+  const validationFormCheck1 = document.getElementById("validationFormCheck2");
+  const validationFormCheck2 = document.getElementById("validationFormCheck3");
+  const validationFormCheck3 = document.getElementById("validationFormCheck4");
+  const validationFormMonto = document.getElementById("CustomMonto");
+
+
+  invalidCheck2.addEventListener("change", function() {
+
+    if (this.checked) {
+      validationFormCheck1.required = true;
+      validationFormCheck2.required = true;
+      validationFormCheck3.required = true;
+      validationFormMonto.required = true;
+    } else {
+      validationFormCheck1.required = false;
+      validationFormCheck2.required = false;
+      validationFormCheck3.required = false;
+      validationFormMonto.required = false;
+    }
+  });
+</script>    
+
+
+
+
+</body>
+</html>

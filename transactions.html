@@ -13,9 +13,11 @@
     <title>Depositar</title>
 </head>   
     
-<header>
-      <div>
-        <h1>Alke-Wallet</h1>
+<header  id="miCuadrado2" class="cuadrocielo shadow">
+    <div class="container">
+      <div class="d-flex justify-content-center d-flex align-items-center">
+        <img src="./assets/img/bille5.png" alt="" class="" width="80" ><h1>Alke Wallet</h1>
+      </div>
     </div>
 </header>
 
@@ -27,23 +29,221 @@
     
   <div class="container">
 
-<h2>Últimos Movimientos</h2>
-<div>
-    <ul class="list-group">
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>
-      <li class="list-group-item">Cuenta Corriente - $12.990</li>                              
-    </ul>
+<div class="container">
+
+
+<section class="container mt-4">
+        <h1 class="mb-3 col-lg-9">Últimos Movimientos</h1>
+
+    <section class="row g-2">
+    <div class="col-md-12 rounded overflow-x-auto border p-3 rounded-4 shadow bg-white">
+        <h2 class="h5">Seleccione Cuenta:</h2>
+
+  <div class="col-md-12 bg-white rounded shadow p-3">
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Cuenta Corriente</label>
 </div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Cuenta Visa</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+  <label class="form-check-label" for="inlineRadio3">Cuenta de Ahorro</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+  <label class="form-check-label" for="inlineRadio4">Internacional</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+  <label class="form-check-label" for="inlineRadio5">Todas</label>
+</div>
+</div>
+</div>
+
+
+</section>
+
+    
+        <section class="row g-2">
+
+          <div class="col-lg-2">
+            </div>
+            <div class="col-lg-12 overflow-hidden border p-3 rounded shadow bg-white">
+            <h2 class="h5">Movimientos</h2>
+            <div class="container d-flex justify-content-end">
+            <div class="">
+            <button class="btn btn-outline-primary rounded shadow m-1" id="btndepositar" type="button">Depositar</button>
+            </div>
+            <div class="">
+            <button class="btn btn-outline-warning rounded shadow m-1" id="btnenviardinero" type="button">Enviar Dinero</button>
+            </div>
+            <div class="">
+            <button class="btn btn-outline-danger rounded shadow m-1" id="btntraspaso1" type="button" hidden>Traspaso</button>
+            </div>
+            </div>
+            
+<br>
+            <div class="container-fluid p-3 g-2 rounded shadow-lg bg-white">
+             <form class="d-flex col-md-12" role="search">
+            <input class="form-control me-2" type="search" id="buscadortransacciones" placeholder="Buscar Transaccion" aria-label="Search" onkeyup="filtrarTabla2()"/>
+             <button class="btn btn-outline-success col-md-4" type="button">Buscar</button>
+            </form>
+            </div>
+            <br>
+             <div class="card g-4">
+                    <p class="h6 m-2"><strong>Cantidad de transacciones encontrados: </strong>10</p>
+                </div>
+            <br>
+            <div class="table-responsive text-center rounded bg-white">
+                <table id="listatransacciones" class="table table-hover">
+                    <thead class="table-light">
+                          <tr>
+                            <th>Cuenta</th>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Valor</th>
+                            <th>Saldo Restante</th>
+                        </tr>
+                    </head>
+                    <tbody>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-success">Ingreso</td>
+                            <td>Pedro Casas</td>
+                            <td>15/02/2026</td>
+                            <td>13:15 Hrs</td>
+                            <td class="text-success">+$10.990</td>
+                            <td class="text-success">$560.000</td>
+                        </tr>
+                        <tr>
+                            <td>Visa</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Mall</td>
+                            <td>14/02/2026</td>
+                            <td>15:30 Hrs</td>
+                            <td class="text-danger">-$12.990</td>
+                            <td class="text-success">$550.000</td>
+                        </tr>
+                        <tr>
+                            <td>Debito</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Shell</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>
+                            <td class="text-danger">-$8.990</td>
+                            <td class="text-success">$600.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-success">Ingreso</td>
+                            <td>Pedro Casas</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-success">+$10.990</td>
+                            <td class="text-success">$560.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Comida</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$12.990</td>
+                            <td class="text-success">$630.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Supermercado</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$22.990</td>
+                            <td class="text-success">$740.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Pasaje</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$120.990</td>
+                            <td class="text-success">$860.000</td>
+                        </tr>          
+                                                <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Ropa</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$120.990</td>
+                            <td class="text-success">$860.000</td>
+                        </tr>    
+                        
+                        <tr>
+                            <td>Deposito</td>
+                            <td class="text-success">Ingreso</td>
+                            <td>Contrato</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-success">+$10.990</td>
+                            <td class="text-success">$560.000</td>
+                        </tr>
+                                                <tr>
+                            <td>Cuenta Corriente</td>
+                            <td class="text-danger">Gasto</td>
+                            <td>Shell</td>
+                            <td>12/02/2026</td>
+                            <td>12:00 Hrs</td>                            
+                            <td class="text-danger">-$120.990</td>
+                            <td class="text-success">$860.000</td>
+                        </tr>    
+
+                    </tbody>
+                </table>
+
+
+
+<div class="container-fluid">
+<div class="d-flex justify-content-around">
+<div aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link link-success" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link link-success" href="">1</a></li>
+    <li class="page-item"><a class="page-link link-success" href="">2</a></li>
+    <li class="page-item"><a class="page-link link-success" href="">3</a></li>
+    <li class="page-item">
+      <a class="page-link link-success" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+
+            </div>
+            </div>
+            
+         <div class="col-lg-4"></div>
+         
+        
+        </section>
+</div>
+
 
 <br>
 
 <div class="d-flex justify-content-center">     
-    <a href="./menu.html" class="btn btn-secondary">Volver al Menú Principal</a>
+    <a href="./menu.html" class="btn btn-outline-primary">Volver al Menú Principal ⬅️</a>
 </div> 
 
 </div>
@@ -51,9 +251,10 @@
 <br>
 </main>
 
-<footer>
+<footer class="cuadrocielo shadow">
     <div>
-        <p>AMS</p>
+        <p>&copy; Derechos Reservados Alke Wallet / Andreas Muller 2026</p>
+        <p >Contacto: info@alkewallet.cl</p>
     </div>
 </footer>
 
@@ -62,7 +263,31 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-<script src="./js/index.js"></script>    
+<script src="./assets/js/index.js"></script> 
+  
+<script>
+    document.getElementById("btndepositar").addEventListener('click', function(event) {
+        
+        window.location.href = "./deposit.html"
+    });
+</script>
+
+  <script>
+    document.getElementById("btnenviardinero").addEventListener('click', function(event) {
+        
+        window.location.href = "./sendmoney.html"
+    });
+</script>
+
+  <script>
+    document.getElementById("btntraspaso1").addEventListener('click', function(event) {
+        
+        window.location.href = "./traspaso.html"
+    });
+</script>
+
+
+
 
 </body>
 </html>

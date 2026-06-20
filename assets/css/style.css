@@ -4,22 +4,37 @@
     box-sizing: border-box;
 }
 
-.bg-mi-colo{background: #ff0000;
-}
 
 .cuadrocielo{
     position: relative;
     z-index:1;
-    overflow:hidden; /*if you want to crop the image*/
+    overflow:hidden;
 }
 .cuadrocielo:before{
     z-index:-1;
+  
     position:absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background-size: cover;
-    content: url('/assets/img/nubes1.jpg');
-    opacity:0.2;
+    content: url('/assets/img/nubesfooter.png');
+    opacity:0.4;
 }
+
+
+.miCuadrado{
+    position: relative;
+    z-index:1;
+    overflow:hidden;
+}
+.miCuadrado:before{
+    z-index:-1;
+    position:absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size:cover;
+    content: url('/assets/img/nubes1.jpg');
+    opacity: 1;
+}
+
 
 .roboto-condensed-Roboto {
   font-family: "Roboto Condensed", sans-serif;
@@ -40,10 +55,12 @@ header{
 }
 
 body{
+    background-color: rgb(247, 255, 255);
     font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
     line-height: 1.6;
     color: #2a0361
+
 }
 
    
