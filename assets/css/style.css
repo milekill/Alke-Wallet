@@ -33,6 +33,7 @@
     background-size:cover;
     content: url('/assets/img/nubes1.jpg');
     opacity: 1;
+    background-color:rgb(0, 81, 255);
 }
 
 
@@ -44,6 +45,7 @@
 
 }
 
+
 header{
     background-color:rgb(0, 81, 255);
     color:white;
@@ -52,6 +54,34 @@ header{
     font-size: 0.8rem;
     margin-bottom: 30px;
     border-radius: 0px 0px 30px 30px;
+}
+
+.logo2{
+    font-size: 200%;
+}
+
+.logo2:hover {
+    font-size: 200%;
+}
+
+
+nav img{
+  width: 50px;
+  height: auto;
+}
+
+nav ul{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+
+nav a:hover {
+    color: #ffffff ;
+    font-size: 104%;
 }
 
 body{
@@ -66,13 +96,13 @@ body{
    
 main{
     margin: 20px auto;
-    padding: 0 40px;
+    padding: 0 0px;
 }
 
 
 footer{
     background-color:rgb(0, 81, 255);
-    color:white;
+    color:rgba(255, 255, 255, 0.788);
     text-align: center;
     padding: 16px;
     font-size: 0.8rem;
@@ -86,17 +116,27 @@ footer{
     header{
     font-size: 0.9rem;
     }
+
+    nav ul{
+    margin-left: auto;
+    font-size: 14px;
+    gap: 4px;
+    }
+
+    nav a:hover { 
+    font-size: 104%;
+    }
     
     body{
-        font-size: 16px;
+    font-size: 16px;
     }
 
     main{
-        margin: 20px auto;
-        padding: 0 40px;
+    margin: 20px auto;
+    padding: 0 0px;
     }
     footer{
-        font-size: 0.9rem;
+    font-size: 0.9rem;
     }
 }
 
@@ -105,6 +145,17 @@ footer{
     padding: 24px;
     font-size: 1rem;
     }
+
+    nav ul{
+    margin-left: auto;
+    font-size: 17px;    
+    gap: 8px;
+    }
+
+    nav a:hover {
+    font-size: 104%;
+    }
+
     
     body{
         font-size: 18px;
@@ -113,7 +164,7 @@ footer{
     main{
         max-width: 1024px;
         margin: 40px auto;
-        padding: 0 40px;
+        padding: 0 00px;
     }
 
     footer{

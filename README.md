@@ -2,17 +2,19 @@
 
 ## Página billetera digital para gestión y movimientos de dineros digitales.
 
-    Desarrollada con HTML, CSS, Jquery, JavaScript.
+    Desarrollada con HTML, CSS, Bootstrap, Jquery, JavaScript.
 
     Contiene imágenes en JPG, PNG.
 
     **Proyecto ABP Modulo 2**
 
+    https://github.com/milekill/Alke-Wallet.git
+
     20-06-2026 Valparaíso, Chile.
 
     Andreas Müller S.
 
-Versión:1.0.2.3
+Versión:1.0.2.4
 
 
 Aplicación responsiva para Móviles (481px), Tablet (769px), Computadoras (1025px).
@@ -37,9 +39,13 @@ Al completar el formulario, se reenvía al usuario a login.
 Es la entrada posterior al ingresar desde login, mostrara un mensaje modal con noticias o actualizaciones, se puede hacer click en cualquier parte para cerrarlo, en el menú se muestran un resumen de tu saldo total, los activos, los últimos movimientos, además tiene botones de acciones rápidas para ir a tus lugares mas frecuentes.
 Se incluyen dos tablas con las informaciones de movimiento y activos.
 
+    -   Agregado NavBar para todas las paginas despues del login.
+
 -	Deposito (deposit.html) ✔️:
 La pagina mas compleja en cuanto a código js jq, en ella podemos ingresar un monto, el cual inmediatamente va reflejando una conversión a dólares, posterior al ingreso del monto podemos generar un deposito o un retiro, ambas funciones se verán reflejadas en el saldo de la cuenta, además recibiremos un popup con la noticia de recepción de dinero o de retiro. En caso de no completar los datos o ingresar un monto mayor al saldo, saldrá un mensaje de ingrese los datos.
 La parte del cambio de dólares se encuentra en estado experimental, ya que por el momento genera un null.value en la consola al abrir los demás html (leer mas en errores conocidos), pero se encuentra funcionando sin problemas.
+
+    -   Se toma la desicion de utilazar la funcion `.toLocaleString('es-CL');` para que el formato numerico sea con puntos, asi sea mas facil de leer para el usuario. 
 
 -	Envió de dinero(sendmoney.html) ✔️:
 En esta pagina podremos ver los contactos agregados, buscar contactos, o hacer acciones como agregar contacto nuevo, enviar dinero, modificar, o eliminar de la lista a cada contacto por separado
@@ -52,45 +58,22 @@ En esta pagina podremos ver los contactos agregados, buscar contactos, o hacer a
 -	Formulario de envió de dinero (sendmoneyform.html) ✔️:
 Este formulario permite enviar dinero a un contacto seleccionado, en el se muestran los datos del contacto, posterior se seleccionar una cuenta que mostrara tu saldo en esa cuenta, el monto que se desea enviar, es un formulario con validación, y monto mínimo de $1000 para efectuar el envío, al completar el envío, este solicitara la contraseña para continuar, finalmente muestra una alerta de que el envío fue exitoso, el nombre del contacto y el monto enviado. Posterior reenvía al usuario a la lista de contactos.
 
--	Últimos movimientos (transaction.html):
+-	Últimos movimientos (transaction.html)✔️:
+    pagina donde podras ver una tabla con todos los movimientos, podras seleccionar una cuenta para filtrar por tipo de cuenta, tambien buscar el texto deseado, ademas se agrego botones rapidos para depositar y enviar dinero.
 
--	Traspasos ¡Experimental! () ⁉️:
+-	Crear Contacto y Enviar Dinero ¡Experimental! ()⁉️:
 
--	Noticias ¡Experimental! ()⁉️:
+-	Traspasos ¡Próximamente! () ⭕:
 
--	Crear Contacto y Enviar Dinero ()⁉️:
+-	Noticias ¡Próximamente! ()⭕:
 
 -	Depósitos a Plazo ¡Próximamente! () ⭕:
+
+
 
 
 --------------------
 
 *Errores conocidos:
 
-1-	Si se detectó un error tipo null.value en la línea 396 por consola, es debido a un funcionamiento constaste de la script tipo listening para la conversión del valor “balance” ingresado y convertido a dólares, que se encuentra activa constante en el index.js, lo que al cambiar de html y no encontrar las ID de (deposit.html) presentando un error de esos valores desconocidos. Se solucionará posterior al desarrollo de una función onkeyup=" ()" con el script desarrollado.
-
-
-
-
-
-
-# Título nivel 1
-## Título nivel 2
-### Título nivel 3
-
-**negrita**   *cursiva*   `código inline`
-
-- Ítem de lista
-- Otro ítem
-
-1. Lista numerada
-2. Segundo ítem
-
-[Texto del enlace](https://url.com)
-![Alt de imagen](ruta/imagen.png)
-
-> Cita o blockquote
-
-```javascript
-// Bloque de código
-```
+1-	Si se detectó un error tipo null.value en la línea 396 por consola, es debido a un funcionamiento constaste de la script tipo listening para la conversión del valor “balance” ingresado y convertido a dólares, que se encuentra activa constante en el index.js, lo que al cambiar de html y no encontrar las ID de (deposit.html) presentando un error de esos valores desconocidos. Se solucionará posterior al desarrollo de una función `onkeyup=" ()"` con el script desarrollado.
