@@ -19,6 +19,8 @@ Versión:1.0.2.4
 
 Aplicación responsiva para Móviles (481px), Tablet (769px), Computadoras (1025px).
 
+*Se recomiendo abrir con Live Server en VScode, para ver imagenes con trasparencia.
+
 -	Inicio (Index.html) ✔️:
 Se agrega imagen de fondo para mayor inmersión en el producto, junto al título y logo de Alke Wallet, se decide incluir una frase de subtitulo, se agrega las opciones de inicio de sesión y crear cuenta.
 
@@ -51,7 +53,7 @@ La parte del cambio de dólares se encuentra en estado experimental, ya que por 
 En esta pagina podremos ver los contactos agregados, buscar contactos, o hacer acciones como agregar contacto nuevo, enviar dinero, modificar, o eliminar de la lista a cada contacto por separado
     o	Buscar contacto: al ingresar cada tecla en el input una función onkeyup hará filtrar la tabla según lo que se busque.
     o	Agregar contacto: se abrirá un modal que permitirá ingresar los datos de un nuevo contacto en un formulario con validación, una vez concretado el formulario, mostrará un mensaje de contacto agregado con éxito, y agregará los datos en la tabla.
-    o	Borrar: al presionar el botón borrar se borrar el contacto de la tabla.
+    o	Borrar: al presionar el botón borrar se borrara el contacto de la tabla.
     o	Enviar dinero: al presionar el botón enviar dinero, se abrirá otro html (sendmoyform.html) con los datos del contacto, para realizar un envío de dinero desde una de tus cuentas.
     o	Modificar contacto: en estado experimental, al presionar el botón, se abrirá un modal con los datos del contacto, que se podrán modificar y guardar en la tabla.
 
@@ -62,6 +64,7 @@ Este formulario permite enviar dinero a un contacto seleccionado, en el se muest
     pagina donde podras ver una tabla con todos los movimientos, podras seleccionar una cuenta para filtrar por tipo de cuenta, tambien buscar el texto deseado, ademas se agrego botones rapidos para depositar y enviar dinero.
 
 -	Crear Contacto y Enviar Dinero ¡Experimental! ()⁉️:
+    se puede crear un contacto con un formulario con validacion, y opcionalmente hacer un envio de dinero, todo en el mismo formulario.
 
 -	Traspasos ¡Próximamente! () ⭕:
 
