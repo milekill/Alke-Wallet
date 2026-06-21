@@ -16,7 +16,6 @@
 
 Versión:1.0.2.4
 
-
 Aplicación responsiva para Móviles (481px), Tablet (769px), Computadoras (1025px).
 
 *Se recomiendo abrir con Live Server en VScode, para ver imagenes con trasparencia.
@@ -63,7 +62,7 @@ Este formulario permite enviar dinero a un contacto seleccionado, en el se muest
 -	Últimos movimientos (transaction.html)✔️:
     pagina donde podras ver una tabla con todos los movimientos, podras seleccionar una cuenta para filtrar por tipo de cuenta, tambien buscar el texto deseado, ademas se agrego botones rapidos para depositar y enviar dinero.
 
--	Crear Contacto y Enviar Dinero ¡Experimental! ()⁉️:
+-	Crear Contacto y Enviar Dinero ¡Experimental! (createcontact.html)⁉️:
     se puede crear un contacto con un formulario con validacion, y opcionalmente hacer un envio de dinero, todo en el mismo formulario.
 
 -	Traspasos ¡Próximamente! () ⭕:
@@ -79,4 +78,4 @@ Este formulario permite enviar dinero a un contacto seleccionado, en el se muest
 
 *Errores conocidos:
 
-1-	Si se detectó un error tipo null.value en la línea 396 por consola, es debido a un funcionamiento constaste de la script tipo listening para la conversión del valor “balance” ingresado y convertido a dólares, que se encuentra activa constante en el index.js, lo que al cambiar de html y no encontrar las ID de (deposit.html) presentando un error de esos valores desconocidos. Se solucionará posterior al desarrollo de una función `onkeyup=" ()"` con el script desarrollado.
+1-	Si se detectó un error tipo null.value en la línea 275 por consola, es debido a un funcionamiento constaste de la script tipo listening para la conversión del valor “balance” ingresado y convertido a dólares, que se encuentra activa constante en el index.js, lo que al cambiar de html y no encontrar las ID de (deposit.html) presentando un error de esos valores desconocidos. Se solucionará posterior al desarrollo de una función `onkeyup=" ()"` con el script desarrollado.
